@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Trokinho"
 include(":app")
- 
+include(":data")
+include(":domain")
