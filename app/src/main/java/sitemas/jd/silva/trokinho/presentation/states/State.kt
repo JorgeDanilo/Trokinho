@@ -1,4 +1,4 @@
-package sitemas.jd.silva.trokinho.presentation
+package sitemas.jd.silva.trokinho.presentation.states
 
 sealed class State<T>(
     val data: T? = null,
