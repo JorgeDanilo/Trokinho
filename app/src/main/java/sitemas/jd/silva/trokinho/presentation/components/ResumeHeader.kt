@@ -30,7 +30,7 @@ fun FinanceResumeHeader(
         modifier = Modifier
             .fillMaxWidth()
             .background(Color(0xFF3F51B5))
-            .padding(vertical = 16.dp),
+            .padding(vertical = 10.dp),
         Arrangement.Center
     ) {
         FinanceResume(
