@@ -95,8 +95,14 @@ private fun TransactionCard(
     }
 }
 
-@Preview()
-@Composable()
-fun TransactionListPreview() {
+//@Preview()
+//@Composable()
+//fun TransactionListPreview() {
+//    TransactionList(transactions)
+//}
+
+@Preview
+@Composable
+fun Transaction2ListPreview() {
     TransactionList(transactions)
 }
