@@ -9,10 +9,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun FloatActionButton () {
+fun FloatActionButton (
+    onClick: () -> Unit
+) {
     FloatingActionButton(
         containerColor = Color(0xFF3F51B5),
-        onClick = {}
+        onClick = onClick
     ) {
         Icon(
             tint = Color.White,
@@ -25,5 +27,5 @@ fun FloatActionButton () {
 @Preview
 @Composable
 fun FloatingActionButtonPreview() {
-    FloatActionButton()
+    FloatActionButton {}
 }
