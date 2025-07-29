@@ -19,7 +19,6 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import sitemas.jd.silva.trokinho.presentation.components.FinanceResumeHeader
 import sitemas.jd.silva.trokinho.presentation.components.FloatActionButton
 import sitemas.jd.silva.trokinho.presentation.components.TransactionList
-import sitemas.jd.silva.trokinho.util.transactions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
