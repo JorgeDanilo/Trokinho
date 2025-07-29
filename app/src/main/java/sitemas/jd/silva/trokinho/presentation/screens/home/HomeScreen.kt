@@ -63,7 +63,7 @@ fun HomeScreen() {
                 .fillMaxSize()
         ) {
             FinanceResumeHeader(value = 5000.0)
-            TransactionList(transactions)
+            TransactionList(uiState.transactions)
         }
     }
 }
