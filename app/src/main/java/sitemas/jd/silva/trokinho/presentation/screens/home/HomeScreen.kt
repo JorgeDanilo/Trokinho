@@ -9,9 +9,12 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import sitemas.jd.silva.trokinho.presentation.components.FinanceResumeHeader
 import sitemas.jd.silva.trokinho.presentation.components.FloatActionButton
@@ -21,6 +24,9 @@ import sitemas.jd.silva.trokinho.util.transactions
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
+
+    val viewModel: HomeViewModel = viewModel(factory = HomeViewModelFactory())
+    val uiState by viewModel.uiState.collectAsState()
 
     val scrollBehavior = TopAppBarDefaults
         .enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -40,9 +46,9 @@ fun HomeScreen() {
         topBar = {
             HomeTopBar(
                 scrollBehavior,
-                month = "Julho", // todo get month actually.
-                onPreviousClick = {  },
-                onNextClick = {  }
+                month = uiState.month.toString(),
+                onPreviousClick = { viewModel.onIntent(FinancesIntent.PreviousMonth) },
+                onNextClick = { viewModel.onIntent(FinancesIntent.NextMonth) }
             )
         },
 
@@ -50,7 +56,7 @@ fun HomeScreen() {
             FloatActionButton(onClick = {})
         }
 
-        ) { paddingValues ->
+    ) { paddingValues ->
         Column(
             modifier = Modifier
                 .padding(paddingValues)
