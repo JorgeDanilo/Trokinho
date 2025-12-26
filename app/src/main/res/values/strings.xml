@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Trokinho</string>
+    <string name="txtSaldo">Saldo</string>
 </resources>
